@@ -6,10 +6,14 @@ name: Deploy to GITHUB-PAGE
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+# made it false to accept warnings
+env:
+  CI: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,10 +27,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Install dependencies 
+      # Install dependencies
       - name: Install dependencies
         run: npm install
-        
+
       # Deploy to github pages
       - name: Deploy to Github-pages
         run: npm run deploy
