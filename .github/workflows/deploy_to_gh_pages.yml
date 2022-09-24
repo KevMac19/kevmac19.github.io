@@ -28,30 +28,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Configure node js version
-      - name: Configure node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.14.0
-
       # Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Build React App
+      - name: Build react app
+        run: npm run build
+
       # Deploy to github pages
-      - name: Deploy with gh-pages
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/KevMac19/kevmac19.github.io.git
-          npm run deploy -u "github-actions-bot <support+actions@github.com>"
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-
-      # # for using github commands1
-      # - name: Github configuration
-      #   run: |
-      #     git config user.name "GitHub Actions Bot"
-      #     git config user.email "<>"
-
-      # # Deploy to github pages
-      # - name: Deploy to Github-pages
-      #   run: npm run deploy
+      - name: Deploy to github pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: main
+          BRANCH: gh-pages
+          FOLDER: build
