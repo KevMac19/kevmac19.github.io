@@ -44,7 +44,7 @@ function NavBar() {
             style={{ fontFamily: "Raleway", fontWeight: "bold" }}
             className="purple"
           >
-            KM.
+            Km.
           </h1>
           {/* <img src={logo} className="img-fluid logo" alt="brand" /> */}
         </Navbar.Brand>
