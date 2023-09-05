@@ -10,7 +10,7 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="purple">Kevin Macwan </span>
             from <span className="purple"> Anand, Gujarat, India.</span>
-            <br />I am a React-Native Mobile app Developer.
+            <br />I am a React-Native Mobile App Developer.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!

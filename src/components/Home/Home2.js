@@ -22,33 +22,26 @@ function Home2() {
               I fell in love with programming and I have at least learnt
               something, I think… 🤷‍♂️
               <br />
-              <br />I am fluent in classics like
+              <br />I am fluent in classics of
               <i>
-                <b className="purple"> Javascript and Python. </b>
+                <b className="purple"> Javascript. </b>
               </i>
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
+              I'm truly passionate about crafting
               <i>
-                <b className="purple">Mobile Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  Deep Learning and Natural Language Processing.
-                </b>
+                <b className="purple"> Mobile Apps </b>
+                that are not just functional, but{" "}
+                <b className="purple">User-Friendly and Innovative.</b>
               </i>
               <br />
               <br />
               Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
+              with
+              <b className="purple"> Node.js</b> and constantly seeking new ways
+              to level up my skills in the world of
               <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React-Native</b>
+                <b className="purple"> Web Development</b>
               </i>
             </p>
           </Col>
