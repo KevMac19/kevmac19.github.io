@@ -9,7 +9,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const resumeLink =
-  "https://raw.githubusercontent.com/KevMac19/kevmac19.github.io/main/src/Assets/Kevin-Macwan.pdf";
+  "https://raw.githubusercontent.com/KevMac19/kevmac19.github.io/main/src/Assets/Kevin-Macwan-Updated.pdf";
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
