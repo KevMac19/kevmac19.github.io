@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   web:
     container_name: kevmac-portfolio
@@ -9,5 +7,8 @@ services:
     restart: always
     ports:
       - 3000:3000
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     environment:
       - NODE_ENV=production
