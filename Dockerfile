@@ -2,14 +2,18 @@ FROM node:20-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+ENV YARN_ENABLE_IPV6=false
+ENV NODE_OPTIONS="--dns-result-order=ipv4first"
+ENV YARN_REGISTRY="https://registry.npmjs.org/"
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
-  if [ -f yarn.lock ]; then yarn config set network-timeout 600000 -g && yarn --frozen-lockfile; \
+  if [ -f yarn.lock ]; then yarn config set registry https://registry.npmjs.org/ \
+    && yarn config set network-timeout 600000 \
+    && yarn --frozen-lockfile --network-timeout 600000 \
   elif [ -f package-lock.json ]; then npm ci; \
   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
   else echo "Lockfile not found." && exit 1; \
